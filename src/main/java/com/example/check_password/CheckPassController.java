@@ -16,12 +16,12 @@ public class CheckPassController {
 	public String passwordForm() {
 		return """
 				<html>
-				<head><meta charset=\"UTF-8\"><title>비밀번호 확인</title></head>
-				<body>
-					<h1>비밀번호 확인</h1>
-					<form method=\"post\" action=\"/check-password\">
-						<input type=\"password\" name=\"password\" placeholder=\"비밀번호 입력\" required>
-						<button type=\"submit\">검증</button>
+			<head><meta charset=\"UTF-8\"><title>Check Password</title></head>
+			<body>
+				<h1>Check Password</h1>
+				<form method=\"post\" action=\"/check-password\">
+					<input type=\"password\" name=\"password\" placeholder=\"Enter password\" required>
+					<button type=\"submit\">Verify</button>
 					</form>
 				</body>
 				</html>
@@ -32,8 +32,8 @@ public class CheckPassController {
 	@ResponseBody
 	public String checkPassword(@RequestParam("password") String password) {
 		if (VALID_PASSWORD.equals(password)) {
-			return "패스워드가 정상";
+			return "Password is valid.";
 		}
-		return "패스워드가 올바르지 않습니다.";
+		return "Password is incorrect.";
 	} //CAM 1 test
 }
